@@ -5,5 +5,7 @@ class Urls:
 
 
 class AuthData:
+    name = 'Anna' # имя
     login = 'praktikum_user765@ya.ru' # логин
     password = '123456' # пароль
+    invalid_password = '12345' # некорректный пароль
