@@ -1,5 +1,5 @@
 from locators import Locators
-from helpers import Urls
+from data import AuthData
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -10,8 +10,8 @@ class TestAuthorization:
     def test_authorization_login_button(self, driver):
         driver.find_element(*Locators.TO_LOGIN_PAGE_BUTTON).click()
 
-        driver.find_element(*Locators.EMAIL_FIELD).send_keys('praktikum_user765@ya.ru')
-        driver.find_element(*Locators.PASSWORD_FIELD).send_keys('123456')
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(AuthData.login)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(AuthData.password)
         driver.find_element(*Locators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(Locators.TO_ORDER_BUTTON))
@@ -23,8 +23,8 @@ class TestAuthorization:
     def test_authorization_account_button(self, driver):
         driver.find_element(*Locators.TO_ACCOUNT_PAGE_BUTTON).click()
 
-        driver.find_element(*Locators.EMAIL_FIELD).send_keys('praktikum_user765@ya.ru')
-        driver.find_element(*Locators.PASSWORD_FIELD).send_keys('123456')
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(AuthData.login)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(AuthData.password)
         driver.find_element(*Locators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(Locators.TO_ORDER_BUTTON))
@@ -38,8 +38,8 @@ class TestAuthorization:
         driver.find_element(*Locators.TO_REG_PAGE_LINK).click()
         driver.find_element(*Locators.TO_LOGIN_PAGE_LINK).click()
 
-        driver.find_element(*Locators.EMAIL_FIELD).send_keys('praktikum_user765@ya.ru')
-        driver.find_element(*Locators.PASSWORD_FIELD).send_keys('123456')
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(AuthData.login)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(AuthData.password)
         driver.find_element(*Locators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(Locators.TO_ORDER_BUTTON))
@@ -53,8 +53,8 @@ class TestAuthorization:
         driver.find_element(*Locators.TO_PASS_RECOVERY_PAGE_LINK).click()
         driver.find_element(*Locators.TO_LOGIN_PAGE_LINK).click()
 
-        driver.find_element(*Locators.EMAIL_FIELD).send_keys('praktikum_user765@ya.ru')
-        driver.find_element(*Locators.PASSWORD_FIELD).send_keys('123456')
+        driver.find_element(*Locators.EMAIL_FIELD).send_keys(AuthData.login)
+        driver.find_element(*Locators.PASSWORD_FIELD).send_keys(AuthData.password)
         driver.find_element(*Locators.LOGIN_BUTTON).click()
 
         WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(Locators.TO_ORDER_BUTTON))

@@ -13,10 +13,9 @@ class Locators:
     TO_ORDER_BUTTON = By.XPATH, "//*[contains(@class, 'button_button_size_large')]" # Кнопка "Оформить заказ" на главной
     TO_LOGIN_PAGE_LINK = By.XPATH, "//*[contains(@href, 'login')]" # Ссылка для перехода в форму авторизации
     TO_PASS_RECOVERY_PAGE_LINK = By.XPATH, "//*[contains(@href, 'forgot-password')]" # Ссылка для перехода в форму восстановления пароля
-    TO_CONSTRUCTOR_BUTTON = By.XPATH, "//nav/ul/li[1]//p[contains(@class, 'AppHeader_header__linkText')]" # Кнопка "Конструктор" в навигационном меню
+    TO_CONSTRUCTOR_BUTTON = By.XPATH, "//nav/ul/li/a[@href='/']" # Кнопка "Конструктор" в навигационном меню
     LOGO_BUTTON = By.XPATH, "//nav/div/a[@href='/']" # Кнопка Лого в навигационном меню
-    LOGOUT_BUTTON = By.XPATH, "//ul/li[3]/button" # Кнопка "Выход" в личном кабинете
-    BUNS_SECTION = By.XPATH, "//section/div/div[1]" # Раздел конструктора "Булки"
-    SAUCES_SECTION = By.XPATH, "//section/div/div[2]"  # Раздел конструктора "Соусы"
-    TOPPINGS_SECTION = By.XPATH, "//section/div/div[3]"  # Раздел конструктора "Начинки"
-    CURRENT_SECTION = By.XPATH, "//section/div/div[contains(@class, 'current')]"  # Текущий раздел конструктора
+    LOGOUT_BUTTON = By.XPATH, ".//button[text()='Выход']" # Кнопка "Выход" в личном кабинете
+    BUNS_SECTION = By.XPATH, "//section/div/div/span[contains(text(),'Булки')]/parent::div" # Раздел конструктора "Булки"
+    SAUCES_SECTION = By.XPATH, "//section/div/div/span[contains(text(),'Соусы')]/parent::div"  # Раздел конструктора "Соусы"
+    TOPPINGS_SECTION = By.XPATH, "//section/div/div/span[contains(text(),'Начинки')]/parent::div"  # Раздел конструктора "Начинки"

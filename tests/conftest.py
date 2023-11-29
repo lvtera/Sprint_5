@@ -1,6 +1,6 @@
 import pytest
 from locators import Locators
-from helpers import Urls
+from data import Urls, AuthData
 from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
@@ -21,7 +21,7 @@ def driver():
 def login(driver):
     driver.find_element(*Locators.TO_LOGIN_PAGE_BUTTON).click()
 
-    driver.find_element(*Locators.EMAIL_FIELD).send_keys('praktikum_user765@ya.ru')
-    driver.find_element(*Locators.PASSWORD_FIELD).send_keys('123456')
+    driver.find_element(*Locators.EMAIL_FIELD).send_keys(AuthData.login)
+    driver.find_element(*Locators.PASSWORD_FIELD).send_keys(AuthData.password)
     driver.find_element(*Locators.LOGIN_BUTTON).click()
     WebDriverWait(driver, 3).until(expected_conditions.element_to_be_clickable(Locators.TO_ORDER_BUTTON))

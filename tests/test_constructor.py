@@ -1,5 +1,5 @@
 from locators import Locators
-from helpers import Urls
+from data import Urls
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 
@@ -32,24 +32,22 @@ class TestConstructorSections:
     # Переход к разделу конструктора «Булки»
     def test_to_sauces_section(self, driver):
         driver.find_element(*Locators.SAUCES_SECTION).click()
+        driver
 
-        current_section = driver.find_element(*Locators.CURRENT_SECTION).text
-
-        assert current_section == 'Соусы'
+        section = driver.find_element(*Locators.SAUCES_SECTION).get_attribute('class')
+        assert 'current' in section
 
     # Переход к разделу конструктора «Соусы»
     def test_to_buns_section(self, driver):
         driver.find_element(*Locators.SAUCES_SECTION).click()
         driver.find_element(*Locators.BUNS_SECTION).click()
 
-        current_section = driver.find_element(*Locators.CURRENT_SECTION).text
-
-        assert current_section == 'Булки'
+        section = driver.find_element(*Locators.BUNS_SECTION).get_attribute('class')
+        assert 'current' in section
 
     # Переход к разделу конструктора «Начинки»
     def test_to_toppings_section(self, driver):
         driver.find_element(*Locators.TOPPINGS_SECTION).click()
 
-        current_section = driver.find_element(*Locators.CURRENT_SECTION).text
-
-        assert current_section == 'Начинки'
+        section = driver.find_element(*Locators.TOPPINGS_SECTION).get_attribute('class')
+        assert 'current' in section

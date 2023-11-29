@@ -1,14 +1,10 @@
 import random
 
-class Urls:
-    MAIN_PAGE_URL = 'https://stellarburgers.nomoreparties.site/' # Адрес главной страницы
-    LOGIN_PAGE_URL = 'https://stellarburgers.nomoreparties.site/login' # Адрес страницы авторизации
-    PERSONAL_ACCOUNT_URL = 'https://stellarburgers.nomoreparties.site/account/profile' # Адрес страницы личного кабинета
 
 class Generators:
     def __init__(self):
-        self.login = ''
-        self.password = ''
+        self.login = self.login_generator()
+        self.password = self.password_generator()
 
     # Функция генерации логина
     def login_generator(self):
