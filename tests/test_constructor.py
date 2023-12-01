@@ -32,7 +32,6 @@ class TestConstructorSections:
     # Переход к разделу конструктора «Булки»
     def test_to_sauces_section(self, driver):
         driver.find_element(*Locators.SAUCES_SECTION).click()
-        driver
 
         section = driver.find_element(*Locators.SAUCES_SECTION).get_attribute('class')
         assert 'current' in section
